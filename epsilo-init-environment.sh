@@ -155,10 +155,10 @@ rm -f /tmp/crontab-epsilo-ntp.txt
 wget -O - https://raw.githubusercontent.com/duyhuynhleanh/public-script/master/gtd-prometheus-node-exporter.sh | sudo bash
 
 # Setup environment user root
-#echo 'export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: "' >> /root/.bash_profile
-#echo 'export PROMPT_COMMAND="history -a; history -c; history -r"' >> /root/.bash_profile
-#echo 'export HISTCONTROL="ignoredups:erasedups"' >> /root/.bash_profile
-#echo 'export HISTFILESIZE=2000' >> /root/.bash_profile
-#echo 'export HISTSIZE=10000' >> /root/.bash_profile
+echo 'export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: "' >> /root/.bash_profile
+echo 'export PROMPT_COMMAND="history -a; history -c; history -r"' >> /root/.bash_profile
+echo 'export HISTCONTROL="ignoredups:erasedups"' >> /root/.bash_profile
+echo 'export HISTFILESIZE=2000' >> /root/.bash_profile
+echo 'export HISTSIZE=10000' >> /root/.bash_profile
 
 exit 0
