@@ -143,7 +143,7 @@ timedatectl set-timezone "Asia/Ho_Chi_Minh"
 ntpdate -u vn.pool.ntp.org 2>&1 | tee -a /var/log/ntp.log
 
 # Cron NTP Sync Time to Private NTP Gotadi
-cat << EOF > /tmp/crontab-gotadi-ntp.txt
+cat << EOF > /tmp/crontab-epsilo-ntp.txt
 # Cron NTP Sync Time to Public NTP
 15 * * * * /sbin/ntpdate -u vn.pool.ntp.org 2>&1 | tee -a /var/log/ntp.log
 EOF
