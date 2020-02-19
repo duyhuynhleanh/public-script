@@ -159,7 +159,7 @@ cd /opt/ && wget -O - https://raw.githubusercontent.com/duyhuynhleanh/public-scr
 
 # Update curl version support httpv2
 rpm -Uvh http://www.city-fan.org/ftp/contrib/yum-repo/rhel7/x86_64/city-fan.org-release-2-1.rhel7.noarch.rpm
-yum --enablerepo=city-fan.org install libcurl libcurl-devel
+yum --enablerepo=city-fan.org install -y libcurl libcurl-devel
 
 # Setup environment user root
 echo 'export HISTTIMEFORMAT="[$(tput setaf 6)%F %T$(tput sgr0)]: "' >> /root/.bash_profile
