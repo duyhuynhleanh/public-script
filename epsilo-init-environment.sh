@@ -1,6 +1,7 @@
 #!/bin/bash
 #Company: Epsilo
 #Description: this script used to setup some initialize environment for EC2 Instance (CentOS).
+#Excute: sudo yum install wget -y && wget -O - https://raw.githubusercontent.com/duyhuynhleanh/public-script/master/epsilo-init-environment.sh | sudo bash
 
 # install some neccessary packages
 yum install epel-release -y
