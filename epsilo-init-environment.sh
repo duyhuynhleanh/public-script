@@ -169,4 +169,11 @@ echo 'export HISTCONTROL="ignoredups:erasedups"' >> /root/.bash_profile
 echo 'export HISTFILESIZE=2000' >> /root/.bash_profile
 echo 'export HISTSIZE=10000' >> /root/.bash_profile
 
+# Install SSM
+cd /tmp
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+sudo systemctl enable amazon-ssm-agent
+sudo systemctl start amazon-ssm-agent
+
+
 exit 0
