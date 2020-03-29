@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List member of Epsilo Infrastructure Team
-list_user_name=("duyhla")
+list_user_name=("duyhla" "kiettq")
 
 # Get list public key of user
 get_public_key_each_user()
@@ -10,8 +10,8 @@ get_public_key_each_user()
     if [[ "${user_key}" == "duyhla" ]];then
         user_pub_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCp73GQ7zUKL+loVjfAXilLN2vbUefDOpzKBB19mEvU3QoFHFYJIBkKW+FPgFu0lCH+1ajNwH2VkCNRNS/JDLEKfyjHaKiIXbNtzr6lqI4Oxiv2HCZ0ynJJkJWZo+eSocGcAzZDTELhJN5FWmwZhzaIPNmv2rAdP1RhXudE6Qu3l3tzqg5pDq6Akim42uZaAsPAlsS991rkBHU/8yVaIG8SuOt3A+EAfTNGiKxKBf/jyVN6OM+bQKpgpqaTUmbsZdGDnws4lrztzI/RjYmc7xf5PkF0s+fZjUKaIg0IvQVglqdRKRADjJhPKTv6FQvAUzJ97cY7pIotFwT8UVUkbcFN duy@duy-admin"
 
-    elif [[ "${user_key}" == "some-user-here" ]];then
-        user_pub_key="ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAv1qVqdNBDse8M+75zT8b8SkQp0NtXZVh1j/STfo4Y/RrVi32AHCjc4wXvLxN3+sn9JmJqsDwKsEKiYSy3L7T1Kl9wLzuI7ubQ4Y18c6ANnEr26rgLUqY6Nvq6k0CqzTvVr2vEh7NJCB+QGJY9LyYnr/uQSZTUUUHHI/T2/mNe8Hbko/TcmtHKaJxUsR95fdGCCXbt+6mCtYXZd5CwhLQIIQ8XlZ6Y1u1O8ZZAYIvvKU/lWrCpl2d/xLdQxaMO2jruwmipSFWR5Yb17OJiUAquVaZ1V9K0retkgFuzoKV7lGK8M0bQsq2YsrJftwe9JHrAUo4w4MyaMkBG97NSahnUQ== nguyennt"
+    elif [[ "${user_key}" == "kiettq" ]];then
+        user_pub_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMbYRnVhNrDpEuzgAYIytY4qtAl4kXMU9dFEQHoZSIVjKZeNmIDNwjRo2Y3MvWyz2XazR7hbesKdoOCM1jcfgnKB6R8LqTVqNRIdEL57WsduOnqTIo08mN7sJttM+6Kw63kB4/sN/vzzeEavbWHc6qaO1oVh2VjdnfTmzKg7+v7b6SxxfXqBwtqUJ9AJGGUo2lQMePMhQINN0W/spt/5SUk5Q/DZcRN//AkMUX8MipJ0DN8SUFcA/LkOo0bCJRqsc5YeZbVpUjehCQwlIoaOat6obOzfx2vcmpeVroe2waiecG/lNo6Pa1SwWGOcJjHURHcSNxdnkN324NBxkgRwQlMM9uDum2+IAfdUly6nQ7I9LIsTbxryFuJSQCMoRsxtIU/D6TmgrokLqDuLs18ojcR3yGW+EbzUiZu6B9I3czQqPfDPGbVRZJ+sdit4kdLipSI1aIw+6PbEUwODumbnj0Rp1dMQ2pHTopaj567L5i7DUZ2+hQ7NGZD2EoulKirU0= kiet@kiet"
 
     fi
     echo "${user_pub_key}"
@@ -39,19 +39,19 @@ do
     # Checking
     if [[ "$(grep ${user} /etc/passwd)" ]];then
         echo "-+ Creating user [${user}] is successful ."
-    else 
+    else
         echo "-+ Creating user [${user}] is FAILED ."
     fi
 
     if [[ "$(cat /home/${user}/.ssh/authorized_keys | wc -c)" -gt 250 ]];then
         echo "-+ Updated public key for user [${user}] is successful."
-    else 
+    else
         echo "-+ Updated public key for user [${user}] is FAILED."
     fi
 
     if [[ "$(grep "^${user}" /etc/sudoers)" ]];then
         echo "-+ Updated Sudo permission for user [${user}] is successful."
-    else 
+    else
         echo "-+ Updated Sudo permission for user [${user}] is FAILED."
     fi
     echo " "
