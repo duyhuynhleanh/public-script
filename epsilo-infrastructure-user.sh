@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List member of Epsilo Infrastructure Team
-list_user_name=("duyhla")
+list_user_name=("duyhla thanhnn")
 
 # Get list public key of user
 get_public_key_each_user()
